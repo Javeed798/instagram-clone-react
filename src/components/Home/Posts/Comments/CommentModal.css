@@ -1,0 +1,16 @@
+.comment {
+    max-height: 45vh;
+    overflow-y: scroll;
+}
+
+.comment::-webkit-scrollbar{
+    display: none;
+    scroll-behavior: smooth;
+}
+
+.comment-input{
+    border: none;
+    outline: none;
+    padding: 5px;
+    width: 100%;
+}

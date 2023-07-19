@@ -2,6 +2,7 @@ import React from 'react'
 import Sidebar from "../../components/Sidebar/Sidebar";
 import {Route, Routes} from "react-router-dom";
 import HomePage from "../HomePage/HomePage";
+import Profile from "../../components/Profile/Profile";
 
 const Router = () => {
     return (
@@ -9,9 +10,10 @@ const Router = () => {
             <div className={"w-[20%] border border-l-sky-300"}>
                 <Sidebar />
             </div>
-            <div>
+            <div className={"w-full"}>
                 <Routes>
                     <Route path="/" element={<HomePage />} />
+                    <Route path="username" element={<Profile />} />
                 </Routes>
             </div>
         </div>
