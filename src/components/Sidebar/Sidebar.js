@@ -2,21 +2,23 @@ import React, { useState, useEffect } from 'react';
 import { IoReorderThreeOutline } from "react-icons/io5";
 import { menu } from "./SidebarConfig";
 import { useNavigate } from "react-router-dom";
+import CreatePostModal from "../CreatePost/CreatePostModal";
+import {useDisclosure} from "@chakra-ui/react";
+
 
 const Sidebar = () => {
     const [activeTab, setActiveTab] = useState();
     const navigate = useNavigate();
-
-    useEffect(() => {
-        if (activeTab === "Profile") {
-            navigate("/username");
-        } else if (activeTab === "Home") {
-            navigate("/");
-        }
-    }, [activeTab,navigate]);
+    const { isOpen, onOpen, onClose } = useDisclosure()
 
     const handleTabClick = (title) => {
-        setActiveTab(title);
+        if (title === "Profile") {
+            navigate("/username");
+        } else if (title === "Home") {
+            navigate("/");
+        } else if(title === "Create"){
+            onOpen();
+        }
     };
 
     return (
@@ -43,6 +45,10 @@ const Sidebar = () => {
                     <IoReorderThreeOutline className={"text-2xl"} />
                     <p className={"ml-5"}>More</p>
                 </div>
+            </div>
+            <div>
+                <CreatePostModal
+                    isOpen={isOpen} onClose={onClose} />
             </div>
         </div>
     );

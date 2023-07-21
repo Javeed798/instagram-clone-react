@@ -2,8 +2,10 @@ import React from 'react'
 import StoryCircle from "../../components/Home/Story/StoryCircle";
 import HomeRight from "../../components/Home/HomeRight/HomeRight";
 import PostCard from "../../components/Home/Posts/PostCard";
-
+import CreatePostModal from "../../components/CreatePost/CreatePostModal";
+import {Link} from "react-router-dom"
 const HomePage = () => {
+
     return (
         <div>
             <div className={"mt-10 flex w-[100%] justify-center"}>

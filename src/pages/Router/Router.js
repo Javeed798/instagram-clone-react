@@ -3,6 +3,7 @@ import Sidebar from "../../components/Sidebar/Sidebar";
 import {Route, Routes} from "react-router-dom";
 import HomePage from "../HomePage/HomePage";
 import Profile from "../../components/Profile/Profile";
+import CreatePostModal from "../../components/CreatePost/CreatePostModal";
 
 const Router = () => {
     return (
@@ -14,6 +15,7 @@ const Router = () => {
                 <Routes>
                     <Route path="/" element={<HomePage />} />
                     <Route path="username" element={<Profile />} />
+                    <Route path="createPost" element={<CreatePostModal />} />
                 </Routes>
             </div>
         </div>
